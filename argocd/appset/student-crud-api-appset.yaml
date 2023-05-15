@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: student-crud-api-appset-preview
+  namespace: argocd
+spec:
+  generators:
+    - pullRequest:
+        github:
+          owner: akshay-sri124
+          repo: gitops-student-crud-api
+          labels:
+            - preview
+  template:
+    metadata:
+      name: student-crud-api
+    spec:
+      destination:
+        namespace: master
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: manifests/api
+        repoURL: https://github.com/akshay-sri123/gitops-student-crud-api
+        targetRevision: HEAD
+      syncPolicy: {}
