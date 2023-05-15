@@ -15,6 +15,16 @@ spec:
       containers:
       - name: student-crud-api
         image: akshay754/student_crud_api:latest
+        env:
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-db-params
+                key: db-password
+          - name: DB_USERNAME
+            value: "app_user"
+          - name: DB_HOST
+            value: "postgres"
         resources:
           limits:
             memory: "128Mi"
