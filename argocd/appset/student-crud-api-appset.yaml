@@ -8,7 +8,7 @@ spec:
     - pullRequest:
         github:
           owner: akshay-sri124
-          repo: gitops-student-crud-api
+          repo: student-crud-api
           labels:
             - preview
   template:
