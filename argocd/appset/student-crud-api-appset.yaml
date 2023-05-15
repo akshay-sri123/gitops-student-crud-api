@@ -7,10 +7,14 @@ spec:
   generators:
     - pullRequest:
         github:
-          owner: akshay-sri124
+          owner: akshay-sri123
           repo: student-crud-api
+          tokenRef:
+            secretName: github-secret
+            key: token
           labels:
             - preview
+        requeueAfterSeconds: 300
   template:
     metadata:
       name: student-crud-api
