@@ -20,7 +20,7 @@ spec:
       name: student-crud-api
     spec:
       destination:
-        namespace: master
+        namespace: test-branch
         server: https://kubernetes.default.svc
       project: default
       source:
